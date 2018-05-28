@@ -20,5 +20,20 @@ class MyStringTest(unittest.TestCase):
         self.assertEqual("   word   ", word.center(10), "test that 'center' works")
         self.assertEqual("___word___", word.center(10, '_'), "test that 'center' works with fill")
 
+    def test_count(self):
+        """ testing that 'count' works the way you think """
+        word = "word   wordwordword word w ord   "
+        self.assertEqual(5, word.count('word'), "test that 'count' works")
+        self.assertEqual(1, word.count('word', 20), "test that 'count' works ")
+        self.assertEqual(1, word.count('word', 6, 12), "test that 'count' works")
+
+    def test_endswith(self):
+        """ testing that 'endswith' works the way you think """
+        sentence = "this is the thing"
+        sentence2 = "this is the other thing yo"
+        self.assertTrue(sentence.endswith("thing"), "test that endswith works")
+        self.assertFalse(sentence2.endswith("thing"), "test that endswith works")
+
+
 if __name__ == '__main__':
     unittest.main()
